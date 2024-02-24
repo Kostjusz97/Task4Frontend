@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #d1d0d0; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navbar-nav {
+    display: flex;
+    margin-right: 10px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  

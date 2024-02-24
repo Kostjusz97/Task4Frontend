@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import MainTable from './components/table';
+import LoginForm from './components/form/login';
+import RegistrationForm from './components/form/registration';
+import Header from './components/header';
 
 function App() {
+  const [isLoggedOut, setIsLoggedOut] = useState(true);
+  const handleToggleLogout = () => {
+    setIsLoggedOut(!isLoggedOut);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header
+        isLoggedOut={isLoggedOut}
+        handleToggleLogout={handleToggleLogout}
+      /> 
+      <Routes>
+          <Route path="/" element={<></>} />
+          <Route path="/login" element={<LoginForm setIsLoggedOut={setIsLoggedOut} />}/>
+          <Route path="/register" element={<RegistrationForm setIsLoggedOut={setIsLoggedOut} />}/>
+          <Route path="/users" element={<MainTable handleToggleLogout={handleToggleLogout}/>}/>
+      </Routes>
     </div>
   );
-}
+} 
 
 export default App;

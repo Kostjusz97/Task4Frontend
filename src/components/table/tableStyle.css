@@ -1,0 +1,14 @@
+.tableMain {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.bg-secondary {
+    background-color: #6c757d !important;
+  }
+  
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+  

@@ -1,0 +1,9 @@
+.registerForm Form {
+    width: 500px;
+    margin: 0 auto;
+    gap: 10px; 
+}
+  
+.registerForm Button {
+    margin-top: 10px; 
+}
