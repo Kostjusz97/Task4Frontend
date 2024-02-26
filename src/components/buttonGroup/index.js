@@ -42,6 +42,7 @@ function ButtonGroup({ selectedUsers, updateTableData ,handleToggleLogout}) {
         console.log(response.data);
         updateTableData();
         console.log(selectedUsers);
+        console.log(userIdClient);
         const userIdAsNumber = parseInt(userIdClient, 10);
         console.log(userIdAsNumber);
         if (selectedUsers.includes(userIdAsNumber)) {
