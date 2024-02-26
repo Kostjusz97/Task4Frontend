@@ -37,13 +37,13 @@ function ButtonGroup({ selectedUsers, updateTableData ,handleToggleLogout}) {
   };
 
   const handleDeleteClick = () => {
-    axios.delete('/users/remove', { userIds: selectedUsers })
+    axios.delete('/users/remove', { data: { userIds: selectedUsers } })
       .then(response => {
         console.log(response.data);
         updateTableData();
-
+        console.log(selectedUsers);
         const userIdAsNumber = parseInt(userIdClient, 10);
-
+        console.log(userIdAsNumber);
         if (selectedUsers.includes(userIdAsNumber)) {
           handleToggleLogout()
           navigate('/login');
